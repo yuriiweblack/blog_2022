@@ -7,14 +7,77 @@
     {% else %}
         <title> My blog! </title>
     {% endif %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <div>
-        Blog: <a href="/index">Home</a>
-        <a href="/login">Login</a>
-    </div>
-
+    <header class="header">
+        <div class="container">
+            Blog: <a class="animate__animated animate__backInDown" href="{{url_for('index')}}">HOME!!!</a>
+            <a href="{{url_for('login')}}">LOGIN</a>
+        </div>
+    </header>
     <hr>
-    {% block content %} {% endblock %}
+
+    <main class="main">
+
+        <div class="container">
+
+
+            {% block content %}
+
+            {% endblock %}
+
+            {% with messages = get_flashed_messages() %}
+
+            {% if messages %}
+            <ul>
+
+                {% for message in messages%}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+        <div class="footer__inner">
+            <ul class="footer__list animate__animated animate__bounce">
+                <li class="footer__list-item">Item 1</li>
+                <li class="footer__list-item">Item 2</li>
+                <li class="footer__list-item">Item 3</li>
+                <li class="footer__list-item">Item 4</li>
+            </ul>
+
+            <ul class="footer__list">
+                <li class="footer__list-item ">Item 1</li>
+                <li class="footer__list-item">Item 2</li>
+                <li class="footer__list-item">Item 3</li>
+                <li class="footer__list-item">Item 4</li>
+            </ul>
+
+            <ul class="footer__list">
+                <li class="footer__list-item">Item 1</li>
+                <li class="footer__list-item">Item 2</li>
+                <li class="footer__list-item">Item 3</li>
+                <li class="footer__list-item">Item 4</li>
+            </ul>
+
+            <ul class="footer__list animate__animated animate__backInDown">
+                <li class="footer__list-item">Item 1</li>
+                <li class="footer__list-item">Item 2</li>
+                <li class="footer__list-item">Item 3</li>
+                <li class="footer__list-item">Item 4</li>
+            </ul>
+        </div>
+        </div>
+    </footer>
+
 </body>
 </html>

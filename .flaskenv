@@ -1,1 +1,2 @@
 FLASK_APP=mainblog.py
+FLASK_DEBUG=1

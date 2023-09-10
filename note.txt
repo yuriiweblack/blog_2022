@@ -1,0 +1,9 @@
+export FLASK_DEBUG=1 - Debug mode: on
+export FLASK_DEBUG=0 - Debug mode: off
+
+pip install Flask-SQLAlchemy
+pip install Flask-Migrate
+
+flask db init
+flask db migrate -m "users table"
+flask db upgrade
