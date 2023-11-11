@@ -18,6 +18,7 @@
             {% if current_user.is_anonymous %}
                 <a href="{{url_for('login')}}">LOGIN</a>
             {% else %}
+                <a href="{{url_for('user', username=current_user.username)}}">Profile</a>
                 <a href="{{url_for('logout')}}">LOGOUT</a>
             {% endif %}
         </div>
@@ -74,7 +75,7 @@
             </ul>
 
             <ul class="footer__list animate__animated animate__backInDown">
-                <li class="footer__list-item">Item 1</li>
+                <li class="footer__list-item ">Item 1</li>
                 <li class="footer__list-item">Item 2</li>
                 <li class="footer__list-item">Item 3</li>
                 <li class="footer__list-item">Item 4</li>

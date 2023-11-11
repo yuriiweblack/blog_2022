@@ -37,3 +37,22 @@ body{
     justify-content: space-around;
     align-items: center;
 }
+
+.profile{
+    background-color: grey;
+    text-align:center;
+    padding: 25px;
+}
+
+.user__posts{
+    display: block;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.user__posts-img{
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
