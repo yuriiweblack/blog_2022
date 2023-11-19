@@ -56,3 +56,7 @@ body{
     margin-right: 10px;
 }
 
+#password{
+    border-radius: 20px;
+    background: orange;
+}
