@@ -1,0 +1,73 @@
+2023-12-03 18:33:30,811 ERROR: Exception on /edit_profile [POST] [in /home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/flask/app.py: 1414]
+Traceback (most recent call last):
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.username
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/yurii/PycharmProjects/blog_2022/apps/routes.py", line 113, in edit_profile
+    db.session.commit()
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/orm/scoping.py", line 552, in commit
+    return self._proxied.commit()
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1899, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/orm/state_changes.py", line 136, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1218, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/orm/state_changes.py", line 136, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1193, in _prepare_impl
+    self.session.flush()
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 4142, in flush
+    self._flush(objects)
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 4278, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 147, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 4238, in _flush
+    flush_context.execute()
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 909, in _emit_update_statements
+    c = connection.execute(
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1412, in execute
+    return meth(
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 483, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1844, in _execute_context
+    return self._exec_single_context(
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1984, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/yurii/PycharmProjects/blog_2022/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
+[SQL: UPDATE user SET username=?, about_me=? WHERE user.id = ?]
+[parameters: ('Mark', 'Status: online!!!!!!', 10)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)

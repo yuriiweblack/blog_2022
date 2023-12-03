@@ -3,16 +3,28 @@
 //let text=152
 //alert("What do you need?")
 
-function togglePassword() {
-       const passwordField = document.getElementById("password");
+//function togglePassword() {
+//       const passwordField = document.getElementById("password");
+//      if (passwordField.type === "password") {
+//          passwordField.type = "text";
+//          passwordField.size = 80;
+//      } else {
+//          passwordField.type = "password";
+//      }
+//    }
+
+
+document.querySelector(".click_button").addEventListener('click', function () {
+    const passwordField = document.getElementById("password");
       if (passwordField.type === "password") {
           passwordField.type = "text";
+          passwordField.size = 80;
       } else {
           passwordField.type = "password";
       }
-    }
+});
 
-togglePassword()
+//togglePassword()
 
 
 //  window.addEventListener("load", function(){

@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Occurred an error!</h1>
+    <p>Sorry. Try again!</p>
+    <img src="{{ url_for('static', filename='images/error-500-doofinder.jpg') }}" alt="not_found img" width="1200px" height="500px">
+    <p style="font-size: 22px; text-aline: centre;"><a href="{{ url_for('index')}}">Back</a></p>
+{% endblock %}
